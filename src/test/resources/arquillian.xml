@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<arquillian xmlns="http://jboss.org/schema/arquillian"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian http://www.jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+    <container qualifier="wls-localhost">
+        <configuration>
+            <property name="adminUrl">t3://localhost:7001</property>
+            <property name="adminUserName">weblogic</property>
+            <property name="adminPassword">weblogic1</property>
+            <property name="target">myserver</property>
+            <property name="wlsHome">C:/Programs/wls12120/wlserver</property>
+        </configuration>
+    </container>
+
+    <container qualifier="jetty">
+        <configuration>
+            <!--http://wiki.eclipse.org/Jetty/Feature/Annotations-->
+            <!--<property name="configurationClasses">org.eclipse.jetty.webapp.WebInfConfiguration,org.eclipse.jetty.webapp.WebXmlConfiguration,org.eclipse.jetty.webapp.MetaInfConfiguration,org.eclipse.jetty.webapp.FragmentConfiguration,org.eclipse.jetty.plus.webapp.EnvConfiguration,org.eclipse.jetty.plus.webapp.PlusConfiguration,org.eclipse.jetty.annotations.AnnotationConfiguration,org.eclipse.jetty.webapp.JettyWebXmlConfiguration,org.eclipse.jetty.webapp.TagLibConfiguration</property>-->
+            <!--removing TagLibConfiguration-->
+            <property name="configurationClasses">org.eclipse.jetty.webapp.WebInfConfiguration,org.eclipse.jetty.webapp.WebXmlConfiguration,org.eclipse.jetty.webapp.MetaInfConfiguration,org.eclipse.jetty.webapp.FragmentConfiguration,org.eclipse.jetty.plus.webapp.EnvConfiguration,org.eclipse.jetty.plus.webapp.PlusConfiguration,org.eclipse.jetty.annotations.AnnotationConfiguration,org.eclipse.jetty.webapp.JettyWebXmlConfiguration</property>
+        </configuration>
+    </container>
+
+</arquillian>

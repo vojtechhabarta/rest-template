@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+<Configure id="wac" class="org.eclipse.jetty.webapp.WebAppContext">
+
+    <New id="TemplateDS" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg></Arg>
+        <Arg>jdbc/TemplateDS</Arg>
+        <Arg>
+            <New class="org.apache.derby.jdbc.EmbeddedDataSource">
+                <Set name="DatabaseName">target/db-run</Set>
+                <Set name="CreateDatabase">create</Set>
+            </New>
+        </Arg>
+    </New>
+
+</Configure>
